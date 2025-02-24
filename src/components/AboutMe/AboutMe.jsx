@@ -17,21 +17,21 @@ const AboutMe = () => {
       <div className={style.left}>
         <h3 className={style.subTitle}>MORE ABOUT ME</h3>
         <h2 className={style.title}>
-          Full-Stack Developer and a little bit of{" "}
+          Full-Stack Development | Data Analysis and a little bit of{" "}
           <span className={style.gradientText}>everything</span>
         </h2>
         <p className={style.leftText}>
-          I'm Hamza Pasking Akhtar, a proactive full-stack developer passionate
-          about building dynamic and seamless web applications. From crafting
-          intuitive frontends to developing robust backends, I enjoy tackling
-          complex challenges with clean and efficient code. My expertise
-          includes React, Next.js, and Node.js, and I'm always eager to expand
-          my skill set.
+          I'm Hamza Pasking Akhtar, a Full-Stack Developer and Data Analyst
+          passionate about building dynamic web applications and uncovering
+          insights from data. As a developer, I thrive on crafting seamless user
+          experiences and developing efficient backend systems using React and
+          Node.js. As a data analyst, I enjoy working with data to extract
+          meaningful patterns, drive decision-making, and optimize processes.
         </p>
         <br />
         <p className={style.leftText}>
-          Beyond coding, I'm constantly exploring new ideas and staying curious.
-          I believe in maintaining a balance in life and embracing every
+          Beyond work, I'm always exploring new ideas and staying curious. I
+          believe in maintaining a balance in life and embracing every
           opportunity to grow.
         </p>
         <br />

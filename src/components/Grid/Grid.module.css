@@ -21,13 +21,15 @@
   grid-column-end: 3;
   grid-row-start: 1;
   grid-row-end: 2;
-  padding: 20px;
+  padding: 30px;
   display: flex;
   flex-direction: column;
   justify-content: end;
   gap: 5x;
 }
-
+.box1:hover {
+  padding-bottom: 20px;
+}
 .box1Heading {
   font-size: 24px;
   font-weight: 600;
@@ -37,6 +39,25 @@
   font-size: 18px;
   font-weight: 400;
   margin: 20px 0 5px 0;
+}
+
+.box1PopUp {
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+  padding: 5px 15px;
+  width: max-content;
+  border-radius: 10px;
+  margin-top: 10px;
+  font-size: 21px;
+  color: var(--subtext-color);
+}
+
+.box1PopUp:hover {
+  background-color: var(--glass-background-color);
+  cursor: pointer;
 }
 
 /* Box2 */
@@ -50,7 +71,11 @@
   flex-direction: column;
   justify-content: space-between;
   gap: 10px;
-  padding: 20px;
+  padding: 30px;
+}
+
+.box2:hover {
+  padding-bottom: 20px;
 }
 
 .box2Heading {
@@ -90,6 +115,25 @@
   color: lightslategray;
 }
 
+.box2PopUp {
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+  padding: 5px 15px;
+  width: max-content;
+  border-radius: 10px;
+  margin-top: 10px;
+  font-size: 21px;
+  color: var(--subtext-color);
+}
+
+.box2PopUp:hover {
+  background-color: var(--glass-background-color);
+  cursor: pointer;
+}
+
 /* Box 3 */
 
 .box3 {
@@ -101,7 +145,7 @@
   flex-direction: column;
   justify-content: end;
   gap: 10px;
-  padding: 20px;
+  padding: 30px;
 }
 
 .box3Bottom {
@@ -120,6 +164,26 @@
   color: lightslategray;
 }
 
+.box3PopUp {
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+  padding: 5px 15px;
+  width: max-content;
+  border-radius: 10px;
+  margin-top: 10px;
+  font-size: 21px;
+  color: var(--subtext-color);
+}
+
+.box3PopUp:hover {
+  background-color: var(--glass-background-color);
+  cursor: pointer;
+}
+
+/* Box 4 */
 /* Let's Work Together */
 .box4 {
   grid-row-start: 2;
@@ -131,7 +195,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 30px;
 }
 
 .box4Logo {
@@ -181,6 +245,11 @@
   background-color: brown;
 }
 
+.icon {
+  height: 3rem;
+  width: 3rem;
+}
+
 /* Responsive */
 
 /* Tablet (768px - 1024px): 2 Columns */
@@ -205,6 +274,32 @@
     grid-template-columns: 1fr; /* Single column */
   }
   .box {
-    min-height: 30rem;
+    min-height: 25rem;
+  }
+  .icon {
+    height: 2rem;
+    width: 2rem;
+  }
+  .box1Heading {
+    font-size: 21px;
+  }
+  /* Box 2 */
+  .box2Heading,
+  .box2SubHeading {
+    font-size: 21px;
+  }
+  .box2SubHeading {
+    margin-top: -4px;
+  }
+  .box2BottomHeading {
+    font-size: 21px;
+  }
+  .box2BottomSubHeading {
+    font-size: 18px;
+  }
+  .box2Globe {
+    width: 200px;
+    height: 200px;
+    align-self: center;
   }
 }

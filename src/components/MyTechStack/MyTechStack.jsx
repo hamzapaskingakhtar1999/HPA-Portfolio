@@ -96,8 +96,10 @@ const MyTechStack = () => {
   return (
     <div className={`compress ${style.myTechStack}`}>
       <div className={style.techStack}>
-        {data.map((item) => {
-          return <TechStackContainer logo={item.logo} text={item.text} />;
+        {data.map((item, index) => {
+          return (
+            <TechStackContainer logo={item.logo} text={item.text} key={index} />
+          );
         })}
       </div>
     </div>

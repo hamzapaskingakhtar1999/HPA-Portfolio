@@ -6,8 +6,8 @@ const Marquee = () => {
   return (
     <div className={style.marqueeContainer}>
       <div className={style.marqueeDummy}></div>
-      <div class={style.marquee}>
-        <ul class={style.marqueeContent}>
+      <div className={style.marquee}>
+        <ul className={style.marqueeContent}>
           <li>☆</li>
           <li>Secure</li>
           <li>☆</li>
