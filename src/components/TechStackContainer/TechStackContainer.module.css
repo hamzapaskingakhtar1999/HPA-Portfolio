@@ -1,0 +1,22 @@
+.techStackContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--tech-stack-background);
+  border: 1px solid var(--glass-background-color);
+  width: max-content;
+  padding: 0.5rem 1.5rem;
+  gap: 10px;
+  border-radius: 15px;
+}
+
+.techStackLogo {
+  height: 25px;
+  width: 30px;
+}
+
+.techStackText {
+  color: #d1d1bb;
+}

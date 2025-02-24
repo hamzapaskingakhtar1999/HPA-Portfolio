@@ -1,0 +1,32 @@
+.sectionHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin: 5rem 0 2rem 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.firstHeading {
+  color: whitesmoke;
+  font-size: 5rem;
+}
+
+.secondHeading {
+  background: -webkit-linear-gradient(#d00b6f, #192d75);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 5rem;
+}
+
+.subHeading {
+  color: var(--subtext-color);
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .firstHeading,
+  .secondHeading {
+    font-size: 3rem;
+  }
+}
