@@ -6,6 +6,7 @@
   min-height: 40vh;
   position: relative;
   margin: 2rem 0;
+  overflow: hidden;
 }
 
 .marqueeDummy {

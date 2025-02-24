@@ -34,7 +34,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
   border: 2px solid #4b5563; /* Gray */
   background-color: var(--glass-background-color);
   padding: 0.3rem 0;
