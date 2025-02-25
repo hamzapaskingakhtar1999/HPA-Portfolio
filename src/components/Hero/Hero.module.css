@@ -26,47 +26,9 @@
   margin: 1rem 0;
 }
 
-.buttonContainer {
-  margin-top: 1.5rem;
-}
 
-.button {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  border: 2px solid #4b5563; /* Gray */
-  background-color: var(--glass-background-color);
-  padding: 0.3rem 0;
-  border-radius: 9999px;
-  cursor: pointer;
-}
 
-.button:hover {
-  color: black;
-  transition: 0.5s ease-in-out;
-  border: 2px solid whitesmoke;
-  background: linear-gradient(
-      to left,
-      var(--glass-background-color) 34%,
-      whitesmoke 65%
-    )
-    right;
-  background-size: 300% 100%;
-  color: white;
-}
 
-.buttonText {
-  font-size: 1.25rem;
-  margin-left: 1rem;
-}
-
-.arrowIcon {
-  background-color: white;
-  padding: 0.5rem;
-  border-radius: 9999px;
-  margin-right: 0.5rem;
-}
 
 .heroImage {
   min-width: 100vw;
@@ -120,33 +82,7 @@
     margin: 1.5rem 0;
   }
 
-  .buttonContainer {
-    margin-top: 1.5rem;
-  }
 
-  .button {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 2rem;
-    border: 2px solid #4b5563; /* Gray */
-    background-color: var(--glass-background-color);
-    padding: 0.3rem 0;
-    border-radius: 9999px;
-    cursor: pointer;
-  }
-
-  .buttonText {
-    font-size: 1.25rem;
-    margin-left: 1rem;
-  }
-
-  .arrowIcon {
-    background-color: white;
-    padding: 0.5rem;
-    border-radius: 9999px;
-    margin-right: 0.5rem;
-  }
 
   .heroImage {
     min-width: 100vw;

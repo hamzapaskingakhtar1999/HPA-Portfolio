@@ -190,19 +190,22 @@ const Grid = () => {
             ></video>
           </div>
         </div>
-        
-        <FaShieldHeart
-          size={50}
-          color="lightslategray"
-          className={style.icon}
-        />
-        <h3 className={style.box1SubHeading}>Collaboration and Satisfaction</h3>
-        <h2 className={style.box1Heading}>
-          I prioritize open communication and client satisfaction
-        </h2>
-        <div className={`${style.box1PopUp} ${box1State ? style.show : ""}`}>
-          <span>Book a call</span>
-          <GoArrowRight />
+        <div className={style.boxContent}>
+          <FaShieldHeart
+            size={50}
+            color="lightslategray"
+            className={style.icon}
+          />
+          <h3 className={style.box1SubHeading}>
+            Collaboration and Satisfaction
+          </h3>
+          <h2 className={style.box1Heading}>
+            I prioritize open communication and client satisfaction
+          </h2>
+          <div className={style.boxPopUp}>
+            <span>Book a call</span>
+            <GoArrowRight />
+          </div>
         </div>
       </div>
 
@@ -219,23 +222,24 @@ const Grid = () => {
           </h1>
           <h1 className={style.box2SubHeading}>timezone communications</h1>
         </div>
-        <img className={style.box2Globe} src={globe}></img>
-        <div className={style.box2Bottom}>
-          <MdLocationPin
-            size={50}
-            color="lightslategray"
-            className={style.icon}
-            style={{ marginBottom: "10px" }}
-          />
-          <h3 className={style.box2BottomSubHeading}>Remote</h3>
-          <h2 className={style.box2BottomHeading}>Ireland - {currentTime}</h2>
-        </div>
-        {box2State && (
-          <div className={style.box2PopUp}>
+        <img src={globe} />
+        <div className={style.boxContent}>
+          <div className={style.box2Bottom}>
+            <MdLocationPin
+              size={50}
+              color="lightslategray"
+              className={style.icon}
+              style={{ marginBottom: "10px" }}
+            />
+            <h3 className={style.box2BottomSubHeading}>Remote</h3>
+            <h2 className={style.box2BottomHeading}>Ireland - {currentTime}</h2>
+          </div>
+
+          <div className={style.boxPopUp}>
             <span>Connect now</span>
             <GoArrowRight />
           </div>
-        )}
+        </div>
       </div>
 
       {/* Tech Enthusiast */}
@@ -244,24 +248,25 @@ const Grid = () => {
         onMouseEnter={(e) => box3MouseEnter()}
         onMouseLeave={(e) => box3MouseLeave()}
       >
-        <div className={style.box3Bottom}>
-          <FaLaptopCode
-            size={50}
-            color="lightslategray"
-            className={style.icon}
-            style={{ marginBottom: "10px" }}
-          />
-          <h3 className={style.box3BottomSubHeading}>Tech Enthusiast</h3>
-          <h2 className={style.box3BottomHeading}>
-            Passionate about cutting-edge development technologies
-          </h2>
-        </div>
-        {box3State && (
-          <div className={style.box3PopUp}>
+        <div className={style.boxContent}>
+          <div className={style.box3Bottom}>
+            <FaLaptopCode
+              size={50}
+              color="lightslategray"
+              className={style.icon}
+              style={{ marginBottom: "10px" }}
+            />
+            <h3 className={style.box3BottomSubHeading}>Tech Enthusiast</h3>
+            <h2 className={style.box3BottomHeading}>
+              Passionate about cutting-edge development technologies
+            </h2>
+          </div>
+
+          <div className={style.boxPopUp}>
             <span>Know more</span>
             <GoArrowRight />
           </div>
-        )}
+        </div>
       </div>
 
       {/* Box 4 */}

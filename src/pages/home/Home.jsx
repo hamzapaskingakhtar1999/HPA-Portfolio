@@ -5,6 +5,7 @@ import SectionHeader from "../../components/SectionHeader/SectionHeader";
 import MyTechStack from "../../components/MyTechStack/MyTechStack";
 import Marquee from "../../components/Marquee/Marquee";
 import AboutMe from "../../components/AboutMe/AboutMe";
+import AbstractCTA from "../../components/AbstractCTA/AbstractCTA";
 
 const Home = () => {
   return (
@@ -19,6 +20,7 @@ const Home = () => {
       <MyTechStack />
       <Marquee />
       <AboutMe />
+      <AbstractCTA />
     </div>
   );
 };
