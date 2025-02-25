@@ -1,6 +1,13 @@
 .hero {
   position: relative;
   margin-bottom: 5rem;
+  background: url("../../assets/Home/hero background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  min-width: 100vw;
+  position: relative;
+  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.6);
 }
 
 .heroContent {
@@ -25,10 +32,6 @@
   font-size: 1.5rem;
   margin: 1rem 0;
 }
-
-
-
-
 
 .heroImage {
   min-width: 100vw;
@@ -81,8 +84,6 @@
     line-height: 1.75rem;
     margin: 1.5rem 0;
   }
-
-
 
   .heroImage {
     min-width: 100vw;

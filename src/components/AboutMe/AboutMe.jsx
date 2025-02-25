@@ -6,10 +6,7 @@ import SectionHeader from "../../components/SectionHeader/SectionHeader";
 
 import avatar from "../../assets/avatar.png";
 
-import { FaGithub } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
-import { CiLinkedin } from "react-icons/ci";
-import { SiLeetcode } from "react-icons/si";
+import SocialIcons from "../Social Icons/SocialIcons";
 
 const AboutMe = () => {
   return (
@@ -28,32 +25,16 @@ const AboutMe = () => {
           Node.js. As a data analyst, I enjoy working with data to extract
           meaningful patterns, drive decision-making, and optimize processes.
         </p>
-        <br />
         <p className={style.leftText}>
           Beyond work, I'm always exploring new ideas and staying curious. I
           believe in maintaining a balance in life and embracing every
           opportunity to grow.
         </p>
-        <br />
         <p className={style.leftText}>
           Each day is a chance to make an impact, and I wake up ready to do just
           that!
         </p>
-        {/* Social Icons */}
-        <div className={style.socialIcons}>
-          <a href="https://www.linkedin.com/in/hamza-pasking-akhtar/">
-            <CiLinkedin color="white" size={25} className={style.social} />
-          </a>
-          <a href="https://github.com/hamzapaskingakhtar1999">
-            <FaGithub color="white" size={25} className={style.social} />
-          </a>
-          <a href="https://www.instagram.com/hamzapaskingakhtar/">
-            <FaInstagram color="white" size={25} className={style.social} />
-          </a>
-          <a href="https://leetcode.com/u/hamzapaskingakhtar/">
-            <SiLeetcode color="white" size={25} className={style.social} />
-          </a>
-        </div>
+        <SocialIcons />
       </div>
       <div className={style.right}>
         <img src={avatar} className={style.rightImage} />

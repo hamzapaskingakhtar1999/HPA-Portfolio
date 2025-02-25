@@ -6,6 +6,7 @@ import MyTechStack from "../../components/MyTechStack/MyTechStack";
 import Marquee from "../../components/Marquee/Marquee";
 import AboutMe from "../../components/AboutMe/AboutMe";
 import AbstractCTA from "../../components/AbstractCTA/AbstractCTA";
+import Footer from "../../components/Footer/Footer";
 
 const Home = () => {
   return (
@@ -21,6 +22,7 @@ const Home = () => {
       <Marquee />
       <AboutMe />
       <AbstractCTA />
+      <Footer />
     </div>
   );
 };
