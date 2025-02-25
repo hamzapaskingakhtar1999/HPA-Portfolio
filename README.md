@@ -1,4 +1,4 @@
-# ![Logo](./assets/avatar.png) My Portfolio
+# ![Logo](./src/assets/avatar.png) My Portfolio
 
 Welcome to my personal portfolio! This project is built using **ReactJS** along with **Framer Motion** to create a dynamic and visually engaging experience.
 

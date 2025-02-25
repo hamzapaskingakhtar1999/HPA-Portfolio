@@ -41,10 +41,18 @@ const AboutMe = () => {
         </p>
         {/* Social Icons */}
         <div className={style.socialIcons}>
-          <CiLinkedin color="white" size={25} className={style.social} />
-          <FaGithub color="white" size={25} className={style.social} />
-          <FaInstagram color="white" size={25} className={style.social} />
-          <SiLeetcode color="white" size={25} className={style.social} />
+          <a href="https://www.linkedin.com/in/hamza-pasking-akhtar/">
+            <CiLinkedin color="white" size={25} className={style.social} />
+          </a>
+          <a href="https://github.com/hamzapaskingakhtar1999">
+            <FaGithub color="white" size={25} className={style.social} />
+          </a>
+          <a href="https://www.instagram.com/hamzapaskingakhtar/">
+            <FaInstagram color="white" size={25} className={style.social} />
+          </a>
+          <a href="https://leetcode.com/u/hamzapaskingakhtar/">
+            <SiLeetcode color="white" size={25} className={style.social} />
+          </a>
         </div>
       </div>
       <div className={style.right}>

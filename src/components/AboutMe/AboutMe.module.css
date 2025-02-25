@@ -21,7 +21,8 @@
 }
 
 .social:hover {
-  scale: 1.1;
+  scale: 1.2;
+  transition: 0.3s ease-in-out;
   cursor: pointer;
 }
 
@@ -40,8 +41,8 @@
 }
 
 .title {
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
+  font-size: 2.5rem;
+  margin-bottom: 0.2rem;
 }
 
 .subtitle {
@@ -53,7 +54,7 @@
   background: -webkit-linear-gradient(#d00b6f, #192d75);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 .leftText {

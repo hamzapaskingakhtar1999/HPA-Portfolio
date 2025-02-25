@@ -13,6 +13,13 @@ import { GoArrowRight } from "react-icons/go";
 import globe from "../../assets/Home/globe.png";
 import logo from "../../assets/logo.png";
 
+/* Video */
+
+import v1 from "../../assets/Home/call1.mp4";
+import v2 from "../../assets/Home/call2.mp4";
+import v3 from "../../assets/Home/call3.mp4";
+import v4 from "../../assets/Home/call4.mp4";
+
 const Grid = () => {
   const [currentTime, setCurrentTime] = useState(getCurrentTime());
 
@@ -22,6 +29,12 @@ const Grid = () => {
   const [box2State, setBox2State] = useState(false);
   /* Box 3 */
   const [box3State, setBox3State] = useState(false);
+
+  /* Video 1 State */
+  const [v1State, setV1State] = useState(false);
+  const [v2State, setV2State] = useState(false);
+  const [v3State, setV3State] = useState(false);
+  const [v4State, setV4State] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -46,36 +59,30 @@ const Grid = () => {
 
   const box1MouseEnter = (e) => {
     setBox1State(true);
-    console.log("Mouse 1 Enter");
   };
 
   const box1MouseLeave = (e) => {
     setBox1State(false);
-    console.log("Mouse 1 Leave");
   };
 
   /* Box 2 Mouse Enter Leave */
 
   const box2MouseEnter = (e) => {
     setBox2State(true);
-    console.log("Mouse 2 Enter");
   };
 
   const box2MouseLeave = (e) => {
     setBox2State(false);
-    console.log("Mouse 2 Leave");
   };
 
   /* Box 3 Mouse Enter Leave */
 
   const box3MouseEnter = (e) => {
     setBox3State(true);
-    console.log("Mouse 3 Enter");
   };
 
   const box3MouseLeave = (e) => {
     setBox3State(false);
-    console.log("Mouse 3 Leave");
   };
 
   return (
@@ -86,6 +93,104 @@ const Grid = () => {
         onMouseEnter={(e) => box1MouseEnter()}
         onMouseLeave={(e) => box1MouseLeave()}
       >
+        <div className={style.videos}>
+          {/* Video 1 */}
+          <div className={style.video1}>
+            <video
+              id="video1"
+              src={v1}
+              muted
+              onMouseEnter={() => {
+                const video = document.getElementById("video1");
+                if (video) {
+                  video.play(); // Play the video on hover
+                }
+                setV1State(true);
+              }}
+              onMouseLeave={() => {
+                const video = document.getElementById("video1");
+                if (video) {
+                  video.pause();
+                  video.currentTime = 0;
+                }
+                setV1State(false);
+              }}
+            ></video>
+          </div>
+
+          {/* Video 2 */}
+          <div className={style.video2}>
+            <video
+              id="video2"
+              src={v2}
+              muted
+              onMouseEnter={() => {
+                const video = document.getElementById("video2");
+                if (video) {
+                  video.play(); // Play the video on hover
+                }
+                setV2State(true);
+              }}
+              onMouseLeave={() => {
+                const video = document.getElementById("video2");
+                if (video) {
+                  video.pause();
+                  video.currentTime = 0;
+                }
+                setV2State(false);
+              }}
+            ></video>
+          </div>
+
+          {/* Video 3 */}
+          <div className={style.video3}>
+            <video
+              id="video3"
+              src={v3}
+              muted
+              onMouseEnter={() => {
+                const video = document.getElementById("video3");
+                if (video) {
+                  video.play(); // Play the video on hover
+                }
+                setV3State(true);
+              }}
+              onMouseLeave={() => {
+                const video = document.getElementById("video3");
+                if (video) {
+                  video.pause();
+                  video.currentTime = 0;
+                }
+                setV3State(false);
+              }}
+            ></video>
+          </div>
+
+          {/* Video 4 */}
+          <div className={style.video4}>
+            <video
+              id="video4"
+              src={v4}
+              muted
+              onMouseEnter={() => {
+                const video = document.getElementById("video4");
+                if (video) {
+                  video.play(); // Play the video on hover
+                }
+                setV3State(true);
+              }}
+              onMouseLeave={() => {
+                const video = document.getElementById("video4");
+                if (video) {
+                  video.pause();
+                  video.currentTime = 0;
+                }
+                setV4State(false);
+              }}
+            ></video>
+          </div>
+        </div>
+        
         <FaShieldHeart
           size={50}
           color="lightslategray"
@@ -95,13 +200,10 @@ const Grid = () => {
         <h2 className={style.box1Heading}>
           I prioritize open communication and client satisfaction
         </h2>
-
-        {box1State && (
-          <div className={style.box1PopUp}>
-            <span>Book a call</span>
-            <GoArrowRight />
-          </div>
-        )}
+        <div className={`${style.box1PopUp} ${box1State ? style.show : ""}`}>
+          <span>Book a call</span>
+          <GoArrowRight />
+        </div>
       </div>
 
       {/* Timezone */}

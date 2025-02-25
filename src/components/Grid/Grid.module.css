@@ -26,10 +26,72 @@
   flex-direction: column;
   justify-content: end;
   gap: 5x;
+  position: relative;
 }
-.box1:hover {
+/* .box1:hover {
   padding-bottom: 20px;
+} */
+
+.videos {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  top: 15%;
+  left: 8%;
+  right: 8%;
 }
+/* Video 1 */
+.video1 {
+  width: 200px;
+  transform: rotate(10deg);
+  border: 1px solid white;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: 0.3s ease-in-out;
+}
+.video1:hover {
+  transform: rotate(0deg);
+}
+
+/* Video 2 */
+.video2 {
+  width: 200px;
+  transform: rotate(-15deg);
+  border: 1px solid white;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: 0.3s ease-in-out;
+}
+.video2:hover {
+  transform: rotate(0deg);
+}
+
+/* Video 3 */
+.video3 {
+  width: 200px;
+  transform: rotate(11deg);
+  border: 1px solid white;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: 0.3s ease-in-out;
+}
+.video3:hover {
+  transform: rotate(0deg);
+}
+
+/* Video 4 */
+.video4 {
+  width: 200px;
+  transform: rotate(-14deg);
+  border: 1px solid white;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: 0.3s ease-in-out;
+}
+.video4:hover {
+  transform: rotate(0deg);
+}
+
 .box1Heading {
   font-size: 24px;
   font-weight: 600;
@@ -53,11 +115,22 @@
   margin-top: 10px;
   font-size: 21px;
   color: var(--subtext-color);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s 0.3s;
 }
 
 .box1PopUp:hover {
   background-color: var(--glass-background-color);
   cursor: pointer;
+}
+
+.box1PopUp.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s 0s;
 }
 
 /* Box2 */
@@ -246,8 +319,8 @@
 }
 
 .icon {
-  height: 3rem;
-  width: 3rem;
+  height: 2.5rem;
+  width: 2.5rem;
 }
 
 /* Responsive */
@@ -274,7 +347,7 @@
     grid-template-columns: 1fr; /* Single column */
   }
   .box {
-    min-height: 25rem;
+    min-height: 10rem;
   }
   .icon {
     height: 2rem;
