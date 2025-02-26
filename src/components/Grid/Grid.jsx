@@ -5,6 +5,7 @@ import style from "./Grid.module.css";
 import { FaShieldHeart } from "react-icons/fa6";
 import { MdLocationPin } from "react-icons/md";
 import { FaLaptopCode } from "react-icons/fa";
+import { MdOutlineInfo } from "react-icons/md";
 
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { GoArrowRight } from "react-icons/go";
@@ -29,6 +30,77 @@ const Grid = () => {
   const [box2State, setBox2State] = useState(false);
   /* Box 3 */
   const [box3State, setBox3State] = useState(false);
+  /* Box 5 */
+  const [box5State, setBox5State] = useState(false);
+
+  /* Marquee Cards Data */
+
+  const marqueeData = [
+    {
+      title: "Interactive Quiz Engine",
+      text: "AI-powered quizzes simulate AWS exams with varying difficulty.",
+    },
+    {
+      title: "Performance Analytics Dashboard",
+      text: "Real-time insights into progress and performance trends.",
+    },
+    {
+      title: "Mock Exams & Timed Tests",
+      text: "Full-length exams with time limits to simulate real exam conditions.",
+    },
+    {
+      title: "AWS Services Coverage",
+      text: "Comprehensive coverage of AWS services for full exam preparation.",
+    },
+    {
+      title: "Progress Tracking",
+      text: "Tracks study progress with completion percentages.",
+    },
+    {
+      title: "Expert-Level Explanations",
+      text: "Detailed AI explanations for each question to reinforce learning.",
+    },
+    {
+      title: "Question Bank Updates",
+      text: "Regular updates to the question bank to reflect the latest exam content.",
+    },
+    {
+      title: "Community Discussions",
+      text: "Engage with peers to share tips, solutions, and experiences.",
+    },
+    {
+      title: "Interactive Quiz Engine",
+      text: "AI-powered quizzes simulate AWS exams with varying difficulty.",
+    },
+    {
+      title: "Performance Analytics Dashboard",
+      text: "Real-time insights into progress and performance trends.",
+    },
+    {
+      title: "Mock Exams & Timed Tests",
+      text: "Full-length exams with time limits to simulate real exam conditions.",
+    },
+    {
+      title: "AWS Services Coverage",
+      text: "Comprehensive coverage of AWS services for full exam preparation.",
+    },
+    {
+      title: "Progress Tracking",
+      text: "Tracks study progress with completion percentages.",
+    },
+    {
+      title: "Expert-Level Explanations",
+      text: "Detailed AI explanations for each question to reinforce learning.",
+    },
+    {
+      title: "Question Bank Updates",
+      text: "Regular updates to the question bank to reflect the latest exam content.",
+    },
+    {
+      title: "Community Discussions",
+      text: "Engage with peers to share tips, solutions, and experiences.",
+    },
+  ];
 
   /* Video 1 State */
   const [v1State, setV1State] = useState(false);
@@ -83,6 +155,16 @@ const Grid = () => {
 
   const box3MouseLeave = (e) => {
     setBox3State(false);
+  };
+
+  /* Box 5 Mouse Enter Leave */
+
+  const box5MouseEnter = (e) => {
+    setBox5State(true);
+  };
+
+  const box5MouseLeave = (e) => {
+    setBox5State(false);
   };
 
   return (
@@ -196,10 +278,10 @@ const Grid = () => {
             color="lightslategray"
             className={style.icon}
           />
-          <h3 className={style.box1SubHeading}>
+          <h3 className={style.boxSubheading}>
             Collaboration and Satisfaction
           </h3>
-          <h2 className={style.box1Heading}>
+          <h2 className={style.boxHeading}>
             I prioritize open communication and client satisfaction
           </h2>
           <div className={style.boxPopUp}>
@@ -208,9 +290,7 @@ const Grid = () => {
           </div>
         </div>
       </div>
-
       {/* Timezone */}
-
       <div
         className={`${style.box} ${style.box2}`}
         onMouseEnter={(e) => box2MouseEnter()}
@@ -222,7 +302,7 @@ const Grid = () => {
           </h1>
           <h1 className={style.box2SubHeading}>timezone communications</h1>
         </div>
-        <img src={globe} />
+        <img src={globe} className={style.box2Globe} />
         <div className={style.boxContent}>
           <div className={style.box2Bottom}>
             <MdLocationPin
@@ -231,8 +311,8 @@ const Grid = () => {
               className={style.icon}
               style={{ marginBottom: "10px" }}
             />
-            <h3 className={style.box2BottomSubHeading}>Remote</h3>
-            <h2 className={style.box2BottomHeading}>Ireland - {currentTime}</h2>
+            <h3 className={style.boxSubheading}>Remote</h3>
+            <h2 className={style.boxHeading}>Ireland - {currentTime}</h2>
           </div>
 
           <div className={style.boxPopUp}>
@@ -241,8 +321,7 @@ const Grid = () => {
           </div>
         </div>
       </div>
-
-      {/* Tech Enthusiast */}
+      {/* Tech Enthusiast */} {/* Box 3 */}
       <div
         className={`${style.box} ${style.box3}`}
         onMouseEnter={(e) => box3MouseEnter()}
@@ -256,8 +335,8 @@ const Grid = () => {
               className={style.icon}
               style={{ marginBottom: "10px" }}
             />
-            <h3 className={style.box3BottomSubHeading}>Tech Enthusiast</h3>
-            <h2 className={style.box3BottomHeading}>
+            <h3 className={style.boxSubheading}>Tech Enthusiast</h3>
+            <h2 className={style.boxHeading}>
               Passionate about cutting-edge development technologies
             </h2>
           </div>
@@ -268,7 +347,6 @@ const Grid = () => {
           </div>
         </div>
       </div>
-
       {/* Box 4 */}
       <div className={`${style.box} ${style.box4}`}>
         <img src={logo} className={style.box4Logo} />
@@ -279,9 +357,42 @@ const Grid = () => {
           Send an email
         </a>
       </div>
-
       {/* Box 5 */}
-      <div className={`${style.box} ${style.box5}`}></div>
+      <div
+        className={`${style.box} ${style.box5}`}
+        onMouseEnter={(e) => box5MouseEnter()}
+        onMouseLeave={(e) => box5MouseLeave()}
+      >
+        <div className={style.marqueeCards}>
+          {marqueeData.map((item, index) => {
+            return (
+              <div className={style.marqueeCard} key={index}>
+                <h3 className={style.marqueeTitle}>{item.title}</h3>
+                <p className={style.marqueeText}>{item.text}</p>
+              </div>
+            );
+          })}
+        </div>
+        <div className={style.boxContent}>
+          <div className={style.box5Bottom}>
+            <MdOutlineInfo
+              size={50}
+              color="lightslategray"
+              className={style.icon}
+              style={{ marginBottom: "10px" }}
+            />
+            <h3 className={style.boxSubheading}>The Inside Scoop</h3>
+            <h2 className={style.boxHeading}>
+              Currently building a SaaS Application
+            </h2>
+          </div>
+
+          <div className={style.boxPopUp}>
+            <span>View Recent Work</span>
+            <GoArrowRight />
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

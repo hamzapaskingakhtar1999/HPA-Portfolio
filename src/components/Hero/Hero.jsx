@@ -8,7 +8,10 @@ const Hero = () => {
     <div className={styles.hero}>
       <div className={styles.heroContent}>
         <h1 className={styles.heroHeading}>
-          I create digital presence and turn ideas into digital experience
+          I create digital{" "}
+          <span style={{ fontFamily: "Kaushan Script" }}>presence</span> and
+          turn ideas into digital{" "}
+          <span style={{ fontFamily: "Kaushan Script" }}>experience</span>
         </h1>
         <p className={styles.heroSubHeading}>
           Hello, I'm <strong>Hamza Pasking Akhtar</strong>, a Full Stack
