@@ -16,7 +16,7 @@ const Home = () => {
       <SectionHeader
         firstHeading={"My"}
         secondHeading={"Tech Stack"}
-        subHeading={"I CONSTANTLY TRY TO IMPROVE MY"}
+        subHeading={"I CONSTANTLY TRY TO IMPROVE"}
       />
       <MyTechStack />
       <Marquee />
