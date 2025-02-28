@@ -303,6 +303,10 @@
   animation: marqueeCards 35s linear infinite;
 }
 
+.box5:hover .marqueeCards {
+  animation-play-state: paused;
+}
+
 .marqueeCard {
   display: flex;
   flex-direction: column;
@@ -420,5 +424,17 @@
   .button {
     gap: 1rem;
     font-size: 18px;
+  }
+
+  .videos {
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+
+  .video1,
+  .video2,
+  .video3,
+  .video4 {
+    width: 150px;
   }
 }

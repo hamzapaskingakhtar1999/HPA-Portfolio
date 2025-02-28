@@ -5,6 +5,8 @@ import Navbar from "./components/Navbar/Navbar";
 
 import Home from "./pages/home/Home";
 import Work from "./pages/work/Work";
+import Footer from "./components/Footer/Footer";
+import BookACall from "./components/BookACall/BookACall";
 
 const App = () => {
   return (
@@ -13,7 +15,9 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/work" element={<Work />} />
+        <Route path="/bookacall" element={<BookACall />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 };

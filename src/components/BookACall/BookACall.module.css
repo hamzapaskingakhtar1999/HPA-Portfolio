@@ -1,0 +1,27 @@
+.bookacall {
+  min-height: 100vh;
+  min-width: 100vw;
+  padding: 8rem 1rem 1rem 1rem;
+  text-align: center;
+}
+
+.title {
+  font-size: 4rem;
+  font-weight: 600;
+}
+
+.subTitle {
+  color: var(--subtext-color);
+  font-size: 1.5rem;
+}
+
+@media screen and (max-width:768px) {
+    .title {
+        font-size: 2rem;
+        margin: 20px 0;
+    }
+    .subTitle {
+        font-size: 1.1rem;
+    }
+    
+}
