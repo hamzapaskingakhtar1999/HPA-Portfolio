@@ -7,6 +7,10 @@ import { useNavigate } from "react-router-dom";
 const Navbar = () => {
   const navigate = useNavigate();
 
+  /* Active Burger */
+
+  const [active, setActive] = useState(false);
+
   const [activeItem, setActiveItem] = useState(() => {
     return localStorage.getItem("activeItem") || "Home";
   });
@@ -18,6 +22,10 @@ const Navbar = () => {
   const handleItemClick = (title, path) => {
     setActiveItem(title);
     navigate(path);
+  };
+
+  const openBurgerMode = () => {
+    setActive(!active);
   };
 
   return (
@@ -56,7 +64,7 @@ const Navbar = () => {
           className={`${activeItem === "More" ? style.active : ""} ${
             style.navbarItem
           }`}
-          onClick={() => handleItemClick("More", "#")}
+          /* onClick={() => handleItemClick("More", "#")} */
         >
           <p className={style.itemName}>More</p>
         </div>
@@ -68,6 +76,27 @@ const Navbar = () => {
       {/* Right */}
       <div className={style.right}>
         <LuFlower size={25} />
+      </div>
+
+      {/* Hamburger - Small Screen */}
+      <div className={style.smallScreenMenu} onClick={(e) => openBurgerMode()}>
+        <div className={style.burgerContainer}>
+          <div
+            className={`${style.topBurger} ${style.burgerLine} ${
+              active ? style.active : ""
+            }`}
+          ></div>
+          <div
+            className={`${style.middleBurger} ${style.burgerLine} ${
+              active ? style.active : ""
+            }`}
+          ></div>
+          <div
+            className={`${style.bottomBurger} ${style.burgerLine} ${
+              active ? style.active : ""
+            }`}
+          ></div>
+        </div>
       </div>
     </nav>
   );

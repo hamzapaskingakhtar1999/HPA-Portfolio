@@ -36,11 +36,12 @@
 .navbarItem {
   padding: 0.5rem 1.5rem;
   border-radius: 100px;
-  transition: background-color 0.5s ease, transform 0.5s ease; /* Added transition for background and transform */
+  transition: 0.3s ease-in-out;
 }
 
 .navbarItem:hover {
   cursor: pointer;
+  color: wheat;
 }
 
 .navbarItem.active {
@@ -57,8 +58,7 @@
 }
 
 .itemName {
-  color: whitesmoke;
-  transition: color 0.4s ease; /* Smooth transition for text color */
+  transition: color 0.1s ease; /* Smooth transition for text color */
 }
 
 .navbarItem.active .itemName {
@@ -68,6 +68,12 @@
 .right {
 }
 
+/* Burger lol*/
+
+.smallScreenMenu {
+  display: none;
+}
+
 @media screen and (max-width: 426px) {
   .navbar {
     justify-content: space-between;
@@ -75,5 +81,42 @@
   }
   .middle {
     display: none;
+  }
+  .right {
+    display: none;
+  }
+  .smallScreenMenu {
+    display: inline-flex;
+  }
+
+  .burgerContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    height: 2rem;
+  }
+
+  .burgerLine {
+    width: 3rem;
+    height: 0.15rem;
+    background-color: whitesmoke;
+    transition: transform 0.3s ease, opacity 0.3s ease,
+      background-color 0.3s ease;
+    border-radius: 0.1rem;
+    position: relative;
+  }
+
+  .topBurger.active {
+    transform: rotate(45deg) translateY(0.9rem);
+  }
+
+  .middleBurger.active {
+    opacity: 0;
+  }
+
+  .bottomBurger.active {
+    transform: rotate(-45deg) translateY(-0.9rem);
   }
 }
