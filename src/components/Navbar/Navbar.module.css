@@ -57,7 +57,7 @@
 }
 
 .itemName {
-  color: var(--subtext-color);
+  color: whitesmoke;
   transition: color 0.4s ease; /* Smooth transition for text color */
 }
 

@@ -62,7 +62,6 @@
 }
 
 .ctaText {
-  font-size: 1.2rem;
   color: var(--subtext-color);
 }
 
@@ -71,7 +70,6 @@
   flex-direction: row;
   align-items: center;
   gap: 0.5rem;
-  font-size: 1.2rem;
 }
 
 .anchor:hover {

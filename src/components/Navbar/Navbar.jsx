@@ -22,9 +22,11 @@ const Navbar = () => {
 
   return (
     <nav className={style.navbar}>
+      {/* Left */}
       <div className={style.left}>
         <img src={logo} className={style.logo} />
       </div>
+      {/* Middle */}
       <div className={style.middle}>
         <div
           className={`${activeItem === "Home" ? style.active : ""} ${
@@ -63,6 +65,7 @@ const Navbar = () => {
           <p className={style.itemName}>Book a Call</p>
         </div>
       </div>
+      {/* Right */}
       <div className={style.right}>
         <LuFlower size={25} />
       </div>

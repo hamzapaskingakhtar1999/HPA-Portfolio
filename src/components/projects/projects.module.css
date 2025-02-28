@@ -1,0 +1,9 @@
+.projects {
+  scroll-margin-top: 40px;
+}
+
+.projectsList {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
