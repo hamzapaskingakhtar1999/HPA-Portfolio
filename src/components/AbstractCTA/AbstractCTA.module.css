@@ -29,7 +29,7 @@
   color: var(--subtext-color);
 }
 
-@media screen and (max-width:767px) {
+@media screen and (max-width:768px) {
   .heading {
     font-size: 1.5rem;
   }
