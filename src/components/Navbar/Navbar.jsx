@@ -4,6 +4,40 @@ import logo from "../../assets/logo.png";
 import { LuFlower } from "react-icons/lu";
 import { useNavigate } from "react-router-dom";
 
+import { RiHome3Line } from "react-icons/ri";
+import { GoProjectSymlink } from "react-icons/go";
+import { RxAvatar } from "react-icons/rx";
+import { IoBookOutline } from "react-icons/io5";
+import { BsBucket } from "react-icons/bs";
+
+const menuItemData = [
+  {
+    icon: RiHome3Line,
+    title: "Home",
+    subTitle: "Welcome to my forever work-in-progress",
+  },
+  {
+    icon: GoProjectSymlink,
+    title: "Projects",
+    subTitle: "Showcase of my projects",
+  },
+  {
+    icon: RxAvatar,
+    title: "About",
+    subTitle: "Learn more about me",
+  },
+  {
+    icon: IoBookOutline,
+    title: "Guest Book",
+    subTitle: "Leave a message for me",
+  },
+  {
+    icon: BsBucket,
+    title: "Bucket List",
+    subTitle: "Things to do atleast once in my life",
+  },
+];
+
 const Navbar = () => {
   const navigate = useNavigate();
 
@@ -97,6 +131,25 @@ const Navbar = () => {
             }`}
           ></div>
         </div>
+      </div>
+      <div
+        className={`${style.burgerItems} ${
+          active ? style.burgerItemsActive : ""
+        }`}
+      >
+        {menuItemData.map((item, index) => {
+          return (
+            <div className={style.burgerItem} key={index}>
+              <div className={style.burgerItemLeft}>
+                {<item.icon color="whitesmoke" size={25} />}
+              </div>
+              <div className={style.burgerItemRight}>
+                <h2 className={style.burgerItemRightTitle}>{item.title}</h2>
+                <p className={style.burgerItemRightSubtitle}>{item.subTitle}</p>
+              </div>
+            </div>
+          );
+        })}
       </div>
     </nav>
   );
