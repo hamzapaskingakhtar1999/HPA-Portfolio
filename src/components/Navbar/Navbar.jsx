@@ -66,7 +66,18 @@ const Navbar = () => {
     <nav className={style.navbar}>
       {/* Left */}
       <div className={style.left}>
-        <img src={logo} className={style.logo} />
+        <img
+          src={logo}
+          className={style.logo}
+          onClick={() => {
+            navigate("/");
+            scrollTo({
+              top: 0,
+              behavior: "smooth",
+            });
+            handleItemClick("Home", "/");
+          }}
+        />
       </div>
       {/* Middle */}
       <div className={style.middle}>

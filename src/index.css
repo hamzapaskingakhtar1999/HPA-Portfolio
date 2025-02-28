@@ -18,6 +18,7 @@
 body {
   font-family: "Monsterrat";
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 .compress {

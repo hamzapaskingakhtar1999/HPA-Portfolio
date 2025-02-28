@@ -15,6 +15,7 @@
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   box-shadow: rgba(61, 65, 68, 0.2) 0px 8px 24px;
+  border-radius: 100%;
 }
 
 .middle {

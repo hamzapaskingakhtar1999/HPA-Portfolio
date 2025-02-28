@@ -11,7 +11,7 @@ import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { GoArrowRight } from "react-icons/go";
 
 /* Globe */
-import globe from "../../assets/Home/globe.png";
+import globe from "../../assets/Home/globe.gif";
 import logo from "../../assets/logo.png";
 
 /* Video */

@@ -4,7 +4,7 @@ import Grid from "../../components/Grid/Grid";
 import SectionHeader from "../../components/SectionHeader/SectionHeader";
 import MyTechStack from "../../components/MyTechStack/MyTechStack";
 import Marquee from "../../components/Marquee/Marquee";
-import Projects from "../../components/projects/Projects"
+import Projects from "../../components/projects/Projects";
 import AboutMe from "../../components/AboutMe/AboutMe";
 import AbstractCTA from "../../components/AbstractCTA/AbstractCTA";
 import Footer from "../../components/Footer/Footer";
@@ -12,7 +12,7 @@ import Footer from "../../components/Footer/Footer";
 const Home = () => {
   return (
     <div>
-      <Hero />
+      <Hero id="home" />
       <Grid />
       <SectionHeader
         firstHeading={"My"}
@@ -21,7 +21,7 @@ const Home = () => {
       />
       <MyTechStack />
       <Marquee />
-      <Projects/>
+      <Projects />
       <AboutMe />
       <AbstractCTA />
       <Footer />

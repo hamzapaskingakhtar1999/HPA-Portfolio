@@ -178,6 +178,8 @@
 }
 
 .box2Globe {
+  border-radius: 100%;
+  overflow: hidden;
   width: 300px;
   height: 300px;
   align-self: center;
@@ -278,6 +280,11 @@
   grid-row-end: 4;
   grid-column-start: 2;
   grid-column-end: 4;
+  position: relative;
+  overflow: hidden;
+  -webkit-box-shadow: inset 0px 0px 100px 10px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: inset 0px 0px 100px 10px rgba(0, 0, 0, 0.75);
+  box-shadow: inset 0px 0px 100px 10px rgba(0, 0, 0, 0.75);
 }
 
 .box5Bottom {
@@ -294,21 +301,6 @@
   position: absolute;
   top: 2rem;
   animation: marqueeCards 35s linear infinite;
-  mask-image: linear-gradient(
-    to right,
-    transparent,
-    black 20%,
-    white 80%,
-    transparent
-  );
-
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent,
-    black 20%,
-    white 80%,
-    2 transparent
-  );
 }
 
 .marqueeCard {
@@ -345,7 +337,7 @@
 /* Responsive */
 
 /* Tablet (768px - 1024px): 2 Columns */
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 1024px) {
   .grid {
     grid-template-columns: repeat(2, 1fr); /* 2 columns */
   }
@@ -363,7 +355,9 @@
     font-size: 1.7rem;
   }
   .box2Globe {
-    display: none;
+    width: 40%;
+    height: 40%;
+    top: 35%;
   }
 }
 
@@ -379,6 +373,11 @@
     height: 2rem;
     width: 2rem;
   }
+
+  .boxHeading {
+    font-size: 1.1rem;
+  }
+
   .box1Heading,
   .box2Heading,
   .box3Heading,
@@ -413,7 +412,9 @@
     font-size: 18px;
   }
   .box2Globe {
-    display: none;
+    width: 40%;
+    height: 40%;
+    top: 30%;
   }
 
   .button {
