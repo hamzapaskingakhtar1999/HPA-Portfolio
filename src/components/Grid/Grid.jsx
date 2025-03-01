@@ -20,8 +20,11 @@ import v1 from "../../assets/Home/call1.mp4";
 import v2 from "../../assets/Home/call2.mp4";
 import v3 from "../../assets/Home/call3.mp4";
 import v4 from "../../assets/Home/call4.mp4";
+import { useNavigate } from "react-router-dom";
 
 const Grid = () => {
+  const navigate = useNavigate();
+
   const [currentTime, setCurrentTime] = useState(getCurrentTime());
 
   /* Box 1 */
@@ -284,7 +287,10 @@ const Grid = () => {
           <h2 className={style.boxHeading}>
             I prioritize open communication and client satisfaction
           </h2>
-          <div className={style.boxPopUp}>
+          <div
+            className={style.boxPopUp}
+            onClick={() => navigate("/bookacall")}
+          >
             <span>Book a call</span>
             <GoArrowRight />
           </div>
@@ -315,7 +321,10 @@ const Grid = () => {
             <h2 className={style.boxHeading}>Ireland - {currentTime}</h2>
           </div>
 
-          <div className={style.boxPopUp}>
+          <div
+            className={style.boxPopUp}
+            onClick={() => navigate("/bookacall")}
+          >
             <span>Connect now</span>
             <GoArrowRight />
           </div>
@@ -341,7 +350,7 @@ const Grid = () => {
             </h2>
           </div>
 
-          <div className={style.boxPopUp}>
+          <div className={style.boxPopUp} onClick={() => navigate("/about")}>
             <span>Know more</span>
             <GoArrowRight />
           </div>
@@ -387,7 +396,7 @@ const Grid = () => {
             </h2>
           </div>
 
-          <div className={style.boxPopUp}>
+          <div className={style.boxPopUp} onClick={() => navigate("/project")}>
             <span>View Recent Work</span>
             <GoArrowRight />
           </div>

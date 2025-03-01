@@ -3,6 +3,7 @@ import React from "react";
 import style from "./Footer.module.css";
 import SocialIcons from "../Social Icons/SocialIcons";
 import { MdOutlineMail } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -20,27 +21,27 @@ const Footer = () => {
       <div className={style.links}>
         <div className={style.links1}>
           <h3 className={style.linksTitle}>General</h3>
-          <a href="#" className={style.linksText}>
+          <Link to="/" className={style.linksText}>
             Home
-          </a>
-          <a href="#" className={style.linksText}>
+          </Link>
+          <Link to="/project" className={style.linksText}>
             Projects
-          </a>
-          <a href="#" className={style.linksText}>
+          </Link>
+          <Link to="/about" className={style.linksText}>
             About
-          </a>
+          </Link>
         </div>
         <div className={style.links2}>
           <h3 className={style.linksTitle}>The Website</h3>
-          <a href="#" className={style.linksText}>
+          <Link to="/" className={style.linksText}>
             Guest Book
-          </a>
-          <a href="#" className={style.linksText}>
+          </Link>
+          <Link to="/" className={style.linksText}>
             Bucket List
-          </a>
-          <a href="#" className={style.linksText}>
+          </Link>
+          <Link to="/bookacall" className={style.linksText}>
             Book a Call
-          </a>
+          </Link>
         </div>
       </div>
       {/* CTA */}
@@ -50,7 +51,7 @@ const Footer = () => {
           opportunities.
         </p>
         <a href="mailto:hamzapaskingakhtar@gmail.com" className={style.anchor}>
-          <MdOutlineMail size={25}/>
+          <MdOutlineMail size={25} />
           hamzapaskingakhtar@gmail.com
         </a>
       </div>

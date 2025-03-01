@@ -23,7 +23,7 @@ const AbstractCTA = () => {
           </strong>
         </h2>
       </div>
-      <PrimaryButton text={"Get In Touch"} />
+      <PrimaryButton text={"Get In Touch"} redirect="/bookacall" />
       <h3 className={style.subheading}>
         I'm available for full-time roles & freelance projects.
       </h3>

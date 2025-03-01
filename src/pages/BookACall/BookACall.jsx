@@ -7,8 +7,19 @@ import AboutMe from "../../components/AboutMe/AboutMe";
 
 import { CiMail } from "react-icons/ci";
 import AbstractCTA from "../../components/AbstractCTA/AbstractCTA";
+import { useLocation } from "react-router-dom";
 
 export default function BookACall() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    document.documentElement.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant",
+    });
+  }, [pathname]);
+
   useEffect(() => {
     (async function () {
       const Cal = await getCalApi();

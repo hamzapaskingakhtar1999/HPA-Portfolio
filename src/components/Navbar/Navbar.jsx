@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import style from "./Navbar.module.css";
 import logo from "../../assets/logo.png";
 import { LuFlower } from "react-icons/lu";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 import { RiHome3Line } from "react-icons/ri";
 import { GoProjectSymlink } from "react-icons/go";
@@ -40,6 +40,16 @@ const menuItemData = [
 
 const Navbar = () => {
   const navigate = useNavigate();
+
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    document.documentElement.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant", 
+    });
+  }, [pathname]);
 
   /* Active Burger */
 
