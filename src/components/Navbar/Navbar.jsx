@@ -90,12 +90,12 @@ const Navbar = () => {
           <p className={style.itemName}>Home</p>
         </div>
         <div
-          className={`${activeItem === "Work" ? style.active : ""} ${
+          className={`${activeItem === "Project" ? style.active : ""} ${
             style.navbarItem
           }`}
-          onClick={() => handleItemClick("Work", "/work")}
+          onClick={() => handleItemClick("Project", "/project")}
         >
-          <p className={style.itemName}>Work</p>
+          <p className={style.itemName}>Project</p>
         </div>
         <div
           className={`${activeItem === "About" ? style.active : ""} ${
@@ -114,7 +114,12 @@ const Navbar = () => {
           <p className={style.itemName}>More</p>
         </div>
 
-        <div className={`${style.navbarItem} ${style.navbarCTA}`}>
+        <div
+          className={`${style.navbarItem} ${style.navbarCTA}`}
+          onClick={() => {
+            handleItemClick("Book a call", "/bookacall");
+          }}
+        >
           <p className={style.itemName}>Book a Call</p>
         </div>
       </div>

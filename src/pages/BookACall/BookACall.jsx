@@ -3,9 +3,10 @@ import style from "./bookacall.module.css";
 import { useEffect } from "react";
 
 import Cal, { getCalApi } from "@calcom/embed-react";
-import AboutMe from "../AboutMe/AboutMe";
+import AboutMe from "../../components/AboutMe/AboutMe";
 
 import { CiMail } from "react-icons/ci";
+import AbstractCTA from "../../components/AbstractCTA/AbstractCTA";
 
 export default function BookACall() {
   useEffect(() => {
@@ -69,7 +70,7 @@ export default function BookACall() {
         style={{ width: "100%", height: "100%", overflow: "scroll" }}
         config={{ layout: "month_view", theme: "dark" }}
       />
-      <AboutMe />
+      <AbstractCTA />
     </div>
   );
 }
