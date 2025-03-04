@@ -15,26 +15,31 @@ const menuItemData = [
     icon: RiHome3Line,
     title: "Home",
     subTitle: "Welcome to my forever work-in-progress",
+    path: "/",
   },
   {
     icon: GoProjectSymlink,
     title: "Projects",
     subTitle: "Showcase of my projects",
+    path: "/project",
   },
   {
     icon: RxAvatar,
     title: "About",
     subTitle: "Learn more about me",
+    path: "/about",
   },
   {
     icon: IoBookOutline,
     title: "Guest Book",
     subTitle: "Leave a message for me",
+    path: "/",
   },
   {
     icon: BsBucket,
     title: "Bucket List",
     subTitle: "Things to do atleast once in my life",
+    path: "/",
   },
 ];
 
@@ -47,7 +52,7 @@ const Navbar = () => {
     document.documentElement.scrollTo({
       top: 0,
       left: 0,
-      behavior: "instant", 
+      behavior: "instant",
     });
   }, [pathname]);
 
@@ -165,7 +170,14 @@ const Navbar = () => {
       >
         {menuItemData.map((item, index) => {
           return (
-            <div className={style.burgerItem} key={index}>
+            <div
+              className={style.burgerItem}
+              key={index}
+              onClick={() => {
+                navigate(`${item.path}`);
+                setActive(!active);
+              }}
+            >
               <div className={style.burgerItemLeft}>
                 {<item.icon color="whitesmoke" size={25} />}
               </div>
