@@ -9,6 +9,8 @@ import { GoProjectSymlink } from "react-icons/go";
 import { RxAvatar } from "react-icons/rx";
 import { IoBookOutline } from "react-icons/io5";
 import { BsBucket } from "react-icons/bs";
+import { useDispatch, useSelector } from "react-redux";
+import { setActiveNavbar } from "../../store/navbarSlice";
 
 const menuItemData = [
   {
@@ -19,7 +21,7 @@ const menuItemData = [
   },
   {
     icon: GoProjectSymlink,
-    title: "Projects",
+    title: "Project",
     subTitle: "Showcase of my projects",
     path: "/project",
   },
@@ -46,6 +48,9 @@ const menuItemData = [
 const Navbar = () => {
   const navigate = useNavigate();
 
+  const currentNavbarItem = useSelector((state) => state.navbar.active);
+  const dispatch = useDispatch();
+
   const { pathname } = useLocation();
 
   useEffect(() => {
@@ -61,7 +66,7 @@ const Navbar = () => {
   const [active, setActive] = useState(false);
 
   const [activeItem, setActiveItem] = useState(() => {
-    return localStorage.getItem("activeItem") || "Home";
+    return localStorage.getItem("activeItem") ?? "Home";
   });
 
   useEffect(() => {
@@ -71,6 +76,7 @@ const Navbar = () => {
   const handleItemClick = (title, path) => {
     setActiveItem(title);
     navigate(path);
+    dispatch(setActiveNavbar(title));
   };
 
   const openBurgerMode = () => {
@@ -100,7 +106,9 @@ const Navbar = () => {
           className={`${activeItem === "Home" ? style.active : ""} ${
             style.navbarItem
           }`}
-          onClick={() => handleItemClick("Home", "/")}
+          onClick={() => {
+            handleItemClick("Home", "/");
+          }}
         >
           <p className={style.itemName}>Home</p>
         </div>
@@ -176,6 +184,7 @@ const Navbar = () => {
               onClick={() => {
                 navigate(`${item.path}`);
                 setActive(!active);
+                handleItemClick(item.title, item.path);
               }}
             >
               <div className={style.burgerItemLeft}>

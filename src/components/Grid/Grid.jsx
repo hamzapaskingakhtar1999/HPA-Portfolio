@@ -21,11 +21,23 @@ import v2 from "../../assets/Home/call2.mp4";
 import v3 from "../../assets/Home/call3.mp4";
 import v4 from "../../assets/Home/call4.mp4";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { setActiveNavbar } from "../../store/navbarSlice";
 
 const Grid = () => {
   const navigate = useNavigate();
 
   const [currentTime, setCurrentTime] = useState(getCurrentTime());
+
+  const dispatch = useDispatch();
+
+  const [activeItem, setActiveItem] = useState(() => {
+    return localStorage.getItem("activeItem") ?? "Home";
+  });
+
+  useEffect(() => {
+    localStorage.setItem("activeItem", activeItem);
+  }, [activeItem]);
 
   /* Box 1 */
   const [box1State, setBox1State] = useState(false);
@@ -289,7 +301,11 @@ const Grid = () => {
           </h2>
           <div
             className={style.boxPopUp}
-            onClick={() => navigate("/bookacall")}
+            onClick={() => {
+              setActiveItem("Book a call");
+              navigate("/bookacall");
+              dispatch(setActiveNavbar("Book a call"));
+            }}
           >
             <span>Book a call</span>
             <GoArrowRight />
@@ -323,7 +339,11 @@ const Grid = () => {
 
           <div
             className={style.boxPopUp}
-            onClick={() => navigate("/bookacall")}
+            onClick={() => {
+              setActiveItem("Book a call");
+              dispatch(setActiveNavbar("Book a call"));
+              navigate("/bookacall");
+            }}
           >
             <span>Connect now</span>
             <GoArrowRight />
@@ -350,7 +370,14 @@ const Grid = () => {
             </h2>
           </div>
 
-          <div className={style.boxPopUp} onClick={() => navigate("/about")}>
+          <div
+            className={style.boxPopUp}
+            onClick={() => {
+              setActiveItem("About");
+              dispatch(setActiveNavbar("About")); // Dispatch the updated value
+              navigate("/about");
+            }}
+          >
             <span>Know more</span>
             <GoArrowRight />
           </div>
@@ -396,7 +423,14 @@ const Grid = () => {
             </h2>
           </div>
 
-          <div className={style.boxPopUp} onClick={() => navigate("/project")}>
+          <div
+            className={style.boxPopUp}
+            onClick={() => {
+              navigate("/project");
+              setActive("Project");
+              dispatch(setActiveItem(activeItem));
+            }}
+          >
             <span>View Recent Work</span>
             <GoArrowRight />
           </div>
