@@ -13,6 +13,10 @@ export default function BookACall() {
   const { pathname } = useLocation();
 
   useEffect(() => {
+    document.title = "HPA | Book a Call";
+  }, []);
+
+  useEffect(() => {
     document.documentElement.scrollTo({
       top: 0,
       left: 0,

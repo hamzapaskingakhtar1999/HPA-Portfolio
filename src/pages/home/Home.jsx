@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Hero from "../../components/Hero/Hero";
 import Grid from "../../components/Grid/Grid";
 import SectionHeader from "../../components/SectionHeader/SectionHeader";
@@ -10,6 +10,9 @@ import AbstractCTA from "../../components/AbstractCTA/AbstractCTA";
 import Footer from "../../components/Footer/Footer";
 
 const Home = () => {
+  useEffect(() => {
+    document.title = "HPA Portfolio | Developer";
+  }, []);
   return (
     <div>
       <Hero id="home" />
