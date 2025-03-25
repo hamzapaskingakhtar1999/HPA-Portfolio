@@ -6,7 +6,13 @@
   z-index: 999;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+  overflow-x: auto;
+  padding: 0 4rem;
+}
+
+.left {
+  flex: 1;
 }
 
 .logo {
@@ -19,6 +25,9 @@
 }
 
 .middle {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   flex-direction: row;
   gap: 1rem;
@@ -65,6 +74,7 @@
 }
 
 .right {
+  justify-content: flex-end;
 }
 
 /* Burger lol*/
@@ -106,7 +116,7 @@
   color: var(--subtext-color);
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 800px) {
   .navbar {
     justify-content: space-between;
     padding: 0 1rem;

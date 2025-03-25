@@ -84,7 +84,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={style.navbar}>
+    <nav className={`${style.navbar} compress`}>
       {/* Left */}
       <div className={style.left}>
         <img
