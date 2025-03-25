@@ -8,6 +8,7 @@ import Footer from "./components/Footer/Footer";
 import BookACall from "./pages/BookACall/BookACall";
 import Project from "./pages/project/ProjectPage";
 import About from "./pages/about/About";
+import GuestBook from "./pages/guestbook/GuestBook";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
         <Route path="/project" element={<Project />} />
         <Route path="/about" element={<About />} />
         <Route path="/bookacall" element={<BookACall />} />
+        <Route path="/guestbook" element={<GuestBook />} />
       </Routes>
       <Footer />
     </BrowserRouter>

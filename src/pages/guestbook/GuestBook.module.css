@@ -1,0 +1,27 @@
+.guestBook {
+  width: 40%;
+  margin: auto;
+  padding-top: 8rem;
+}
+
+.topTexts {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.title {
+  color: var(--subtext-color);
+  font-size: 1.2rem;
+}
+
+.mainMessage {
+  font-size: 4rem;
+  line-height: 1;
+}
+
+.message {
+    color: var(--subtext-color);
+    font-size: 1.2rem;
+}

@@ -7,6 +7,7 @@ import SectionHeader from "../../components/SectionHeader/SectionHeader";
 import avatar from "../../assets/avatar.png";
 
 import SocialIcons from "../Social Icons/SocialIcons";
+import GlowingTexts from "../Designed Texts/GlowingTexts/GlowingTexts";
 
 const AboutMe = () => {
   return (
@@ -15,7 +16,8 @@ const AboutMe = () => {
         <h3 className={style.subTitle}>MORE ABOUT ME</h3>
         <h2 className={style.title}>
           Full-Stack Development | Data Analysis and a little bit of{" "}
-          <span className={style.gradientText}>everything</span>
+          {/* <span className={style.gradientText}>everything</span> */}
+          <GlowingTexts text={"everything"} />
         </h2>
         <p className={style.leftText}>
           I'm Hamza Pasking Akhtar, a Full-Stack Developer and Data Analyst

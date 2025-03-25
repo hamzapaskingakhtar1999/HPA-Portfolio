@@ -2,6 +2,8 @@ import React from "react";
 
 import style from "./SectionHeader.module.css";
 
+import GlowingTexts from "../Designed Texts/GlowingTexts/GlowingTexts";
+
 const SectionHeader = ({ firstHeading, secondHeading, subHeading }) => {
   return (
     <div className={style.sectionHeader}>
@@ -17,8 +19,8 @@ const SectionHeader = ({ firstHeading, secondHeading, subHeading }) => {
         }}
       >
         <h2 className={style.firstHeading}>
-          {firstHeading}{" "}
-          <span className={style.secondHeading}>{secondHeading}</span>
+          {firstHeading} <GlowingTexts text={secondHeading} />
+          {/* <span className={style.secondHeading}>{secondHeading}</span> */}
         </h2>
       </div>
     </div>

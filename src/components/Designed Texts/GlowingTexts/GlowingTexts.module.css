@@ -1,0 +1,32 @@
+.glowingTexts {
+  font-style: italic;
+  background-image: linear-gradient(
+    43deg,
+    #4158d0 0%,
+    #c85050 76%,
+    #ffcc70 100%
+  );
+  background-size: 160% 160%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: moveGradient 3s alternate-reverse infinite;
+  font-family: "Indie Flower", cursive;
+  font-weight: 600;
+}
+
+@keyframes moveGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+/* @media screen and (max-width: 440px) {
+  .glowingTexts {
+    font-size: 3rem;
+  }
+}
+ */
