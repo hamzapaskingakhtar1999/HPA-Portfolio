@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import style from "./GuestBook.module.css";
 import GlowingTexts from "../../components/Designed Texts/GlowingTexts/GlowingTexts";
@@ -13,6 +13,10 @@ import { TiLocationArrowOutline } from "react-icons/ti";
 import feedbackData from "./feedbackData";
 
 const GuestBook = () => {
+  useEffect(() => {
+    document.title = "HPA | Guest Book";
+  }, []);
+
   const [charInput, setCharInput] = useState("");
   return (
     <div className={style.guestBook}>

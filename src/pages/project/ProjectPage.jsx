@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
 
 import style from "./ProjectPage.module.css";
-import SectionHeader from "../../components/SectionHeader/SectionHeader";
 
 import Project from "../../components/projects/Projects";
 import AbstractCTA from "../../components/AbstractCTA/AbstractCTA";
+import FeaturedProjects from "../../components/FeaturedProjects/FeaturedProjects";
+import SectionHeader from "../../components/SectionHeader/SectionHeader";
 
 const ProjectPage = () => {
   useEffect(() => {
@@ -12,8 +13,14 @@ const ProjectPage = () => {
   }, []);
   return (
     <div className={style.project}>
-      <Project />
-      <AbstractCTA />
+      <SectionHeader
+        subHeading={"FEATURED CASE STUDIES"}
+        firstHeading={"Curated"}
+        secondHeading={"Work"}
+      />
+      <FeaturedProjects />
+      {/*      <Project />
+      <AbstractCTA /> */}
     </div>
   );
 };

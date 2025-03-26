@@ -7,7 +7,7 @@
   background-color: var(--tech-stack-background);
   border: 1px solid var(--glass-background-color);
   width: max-content;
-  padding: 0.5rem 1.5rem;
+  padding: 0.35rem 1.2rem;
   gap: 10px;
   border-radius: 15px;
 }

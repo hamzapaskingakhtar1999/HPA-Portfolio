@@ -283,9 +283,6 @@
   grid-column-end: 4;
   position: relative;
   overflow: hidden;
-  -webkit-box-shadow: inset 0px 0px 100px 10px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: inset 0px 0px 100px 10px rgba(0, 0, 0, 0.75);
-  box-shadow: inset 0px 0px 100px 10px rgba(0, 0, 0, 0.75);
 }
 
 .box5Bottom {
