@@ -1,14 +1,11 @@
 import React, { useEffect, useState } from "react";
 import style from "./FeaturedProjects.module.css";
+
+import data from "./Data";
+
 import { motion } from "framer-motion";
 import { IoIosArrowForward } from "react-icons/io";
 import TechStackContainer from "../TechStackContainer/TechStackContainer";
-import html from "../../assets/Tech Stack/html.svg";
-import css from "../../assets/Tech Stack/css.svg";
-import javascript from "../../assets/Tech Stack/javascript.svg";
-import react from "../../assets/Tech Stack/react.svg";
-import mongo from "../../assets/Tech Stack/mongodb.svg";
-import node from "../../assets/Tech Stack/node.svg";
 
 const FeaturedProjects = () => {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
@@ -46,63 +43,57 @@ const FeaturedProjects = () => {
 
   return (
     <div className={`${style.featuredProjects} compress`}>
-      {/* LEFT */}
-      <div className={style.left}>
-        <div
-          className={style.leftContainer}
-          onMouseMove={handleMouseMove}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-        >
-          {isCursorVisible && (
-            <motion.div
-              className={style.visitWebsiteCursor}
-              initial={{ opacity: 0 }}
-              variants={variants}
-              animate="default"
-            >
-              <p>View Website</p>
-            </motion.div>
-          )}
-          <div className={style.leftTop}>
-            <h2 className={style.leftTopTitle}>
-              A platform connecting students and instructors for enhanced
-              <br />
-              learning experiences.
-            </h2>
-            <IoIosArrowForward size={30} />
+      {data.map((item) => {
+        return (
+          <div className={`${style.featuredProject}`}>
+            {/* LEFT */}
+            <div className={style.left}>
+              <div
+                className={style.leftContainer}
+                onMouseMove={handleMouseMove}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+              >
+                {isCursorVisible && (
+                  <motion.div
+                    className={style.visitWebsiteCursor}
+                    initial={{ opacity: 0 }}
+                    variants={variants}
+                    animate="default"
+                  >
+                    <p>View Website</p>
+                  </motion.div>
+                )}
+                <div className={style.leftTop}>
+                  <h2 className={style.leftTopTitle}>{item.leftTitle}</h2>
+                  <IoIosArrowForward size={30} />
+                </div>
+                <img src={item.leftImage} className={style.image} />
+              </div>
+            </div>
+            {/* RIGHT */}
+            <div className={style.right}>
+              <h1 className={style.rightTitle}>{item.rightTitle}</h1>
+              <p className={style.description}>{item.rightDescription}</p>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  gap: ".5rem",
+                  flexWrap: "wrap",
+                  marginTop: "1rem",
+                }}
+              >
+                {item.rightLogo.map((item) => {
+                  return (
+                    <TechStackContainer logo={item.logo} text={item.text} />
+                  );
+                })}
+              </div>
+            </div>
           </div>
-          <img
-            src="https://aayushbharti.in/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fzenith.9208c264.jpg&w=1200&q=75"
-            className={style.image}
-          />
-        </div>
-      </div>
-      {/* RIGHT */}
-      <div className={style.right}>
-        <h1 className={style.rightTitle}>Random Title</h1>
-        <p className={style.description}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
-          accusamus magni cum ipsum, aliquam nemo quidem architecto quo
-          consequatur praesentium totam adipisci veniam temporibus molestiae
-          molestias incidunt consectetur ea eveniet.
-        </p>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            gap: ".5rem",
-            flexWrap: "wrap",
-          }}
-        >
-          <TechStackContainer logo={html} text={"HTML"} />
-          <TechStackContainer logo={css} text={"CSS"} />
-          <TechStackContainer logo={javascript} text={"JavaScript"} />
-          <TechStackContainer logo={react} text={"ReactJS"} />
-          <TechStackContainer logo={mongo} text={"MongoDB"} />
-          <TechStackContainer logo={node} text={"NodeJS"} />
-        </div>
-      </div>
+        );
+      })}
     </div>
   );
 };
