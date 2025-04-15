@@ -3,7 +3,12 @@ import style from "./FeaturedProjects.module.css";
 import { motion } from "framer-motion";
 import { IoIosArrowForward } from "react-icons/io";
 import TechStackContainer from "../TechStackContainer/TechStackContainer";
+import html from "../../assets/Tech Stack/html.svg";
 import css from "../../assets/Tech Stack/css.svg";
+import javascript from "../../assets/Tech Stack/javascript.svg";
+import react from "../../assets/Tech Stack/react.svg";
+import mongo from "../../assets/Tech Stack/mongodb.svg";
+import node from "../../assets/Tech Stack/node.svg";
 
 const FeaturedProjects = () => {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
@@ -82,7 +87,21 @@ const FeaturedProjects = () => {
           consequatur praesentium totam adipisci veniam temporibus molestiae
           molestias incidunt consectetur ea eveniet.
         </p>
-        <TechStackContainer logo={css} text={"CSS"} />
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            gap: ".5rem",
+            flexWrap: "wrap",
+          }}
+        >
+          <TechStackContainer logo={html} text={"HTML"} />
+          <TechStackContainer logo={css} text={"CSS"} />
+          <TechStackContainer logo={javascript} text={"JavaScript"} />
+          <TechStackContainer logo={react} text={"ReactJS"} />
+          <TechStackContainer logo={mongo} text={"MongoDB"} />
+          <TechStackContainer logo={node} text={"NodeJS"} />
+        </div>
       </div>
     </div>
   );

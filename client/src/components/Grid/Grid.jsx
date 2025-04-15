@@ -32,11 +32,11 @@ const Grid = () => {
   const dispatch = useDispatch();
 
   const [activeItem, setActiveItem] = useState(() => {
-    return localStorage.getItem("activeItem") ?? "Home";
+    return sessionStorage.getItem("activeItem") ?? "Home";
   });
 
   useEffect(() => {
-    localStorage.setItem("activeItem", activeItem);
+    sessionStorage.setItem("activeItem", activeItem);
   }, [activeItem]);
 
   /* Box 1 */

@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
-  active: localStorage.getItem("activeNavbar") || "Home",
+  active: sessionStorage.getItem("activeNavbar") || "Home",
 };
 
 export const navbarSlice = createSlice({
@@ -9,7 +9,7 @@ export const navbarSlice = createSlice({
   reducers: {
     setActiveNavbar: (state, action) => {
       state.active = action.payload;
-      localStorage.setItem("activeNavbar", action.payload);
+      sessionStorage.setItem("activeNavbar", action.payload);
     },
   },
 });

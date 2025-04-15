@@ -12,6 +12,11 @@ import { BsBucket } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
 import { setActiveNavbar } from "../../store/navbarSlice";
 
+import { motion, stagger } from "framer-motion";
+
+import { useParams } from "react-router";
+import { path } from "framer-motion/client";
+
 const menuItemData = [
   {
     icon: RiHome3Line,
@@ -46,6 +51,9 @@ const menuItemData = [
 ];
 
 const Navbar = () => {
+  let params = useParams();
+
+
   const navigate = useNavigate();
 
   const currentNavbarItem = useSelector((state) => state.navbar.active);
@@ -61,16 +69,17 @@ const Navbar = () => {
     });
   }, [pathname]);
 
+
   /* Active Burger */
 
   const [active, setActive] = useState(false);
 
   const [activeItem, setActiveItem] = useState(() => {
-    return localStorage.getItem("activeItem") ?? "Home";
+    return sessionStorage.getItem("activeItem") ?? "Home";
   });
 
   useEffect(() => {
-    localStorage.setItem("activeItem", activeItem);
+    sessionStorage.setItem("activeItem", activeItem);
   }, [activeItem]);
 
   const handleItemClick = (title, path) => {
@@ -83,10 +92,41 @@ const Navbar = () => {
     setActive(!active);
   };
 
+  /* FRAMER MOTION ANIMATION*/
+
+  const navbarContainer = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
+  const navbarItem = {
+    hidden: { opacity: 0, y: -50 },
+    show: { opacity: 1, y: 0 },
+  };
+
+
   return (
     <nav className={`${style.navbar} compress`}>
       {/* Left */}
-      <div className={style.left}>
+      <motion.div
+        className={style.left}
+        initial={{
+          opacity: 0,
+          x: -100,
+        }}
+        animate={{
+          opacity: 1,
+          x: 0,
+          transition: {
+            delay: 0.3,
+          },
+        }}
+      >
         <img
           src={logo}
           className={style.logo}
@@ -99,57 +139,81 @@ const Navbar = () => {
             handleItemClick("Home", "/");
           }}
         />
-      </div>
+      </motion.div>
       {/* Middle */}
-      <div className={style.middle}>
-        <div
+      <motion.div
+        className={style.middle}
+        variants={navbarContainer}
+        initial="hidden"
+        animate="show"
+      >
+        <motion.div
           className={`${activeItem === "Home" ? style.active : ""} ${
             style.navbarItem
           }`}
           onClick={() => {
             handleItemClick("Home", "/");
           }}
+          variants={navbarItem}
         >
           <p className={style.itemName}>Home</p>
-        </div>
-        <div
+        </motion.div>
+        <motion.div
           className={`${activeItem === "Project" ? style.active : ""} ${
             style.navbarItem
           }`}
           onClick={() => handleItemClick("Project", "/project")}
+          variants={navbarItem}
         >
           <p className={style.itemName}>Project</p>
-        </div>
-        <div
+        </motion.div>
+        <motion.div
           className={`${activeItem === "About" ? style.active : ""} ${
             style.navbarItem
           }`}
           onClick={() => handleItemClick("About", "/about")}
+          variants={navbarItem}
         >
           <p className={style.itemName}>About</p>
-        </div>
-        <div
+        </motion.div>
+        <motion.div
+          onMouseEnter={() => showMore()}
           className={`${activeItem === "More" ? style.active : ""} ${
             style.navbarItem
           }`}
           /* onClick={() => handleItemClick("More", "#")} */
+          variants={navbarItem}
         >
           <p className={style.itemName}>More</p>
-        </div>
+        </motion.div>
 
-        <div
+        <motion.div
           className={`${style.navbarItem} ${style.navbarCTA}`}
           onClick={() => {
             handleItemClick("Book a call", "/bookacall");
           }}
+          variants={navbarItem}
         >
           <p className={style.itemName}>Book a Call</p>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
       {/* Right */}
-      <div className={style.right}>
+      <motion.div
+        className={style.right}
+        initial={{
+          opacity: 0,
+          x: 100,
+        }}
+        animate={{
+          opacity: 1,
+          x: 0,
+          transition: {
+            delay: 0.3,
+          },
+        }}
+      >
         <LuFlower size={25} />
-      </div>
+      </motion.div>
 
       {/* Hamburger - Small Screen */}
       <div className={style.smallScreenMenu} onClick={(e) => openBurgerMode()}>

@@ -5,6 +5,7 @@ import style from "./AboutMe.module.css";
 import SectionHeader from "../../components/SectionHeader/SectionHeader";
 
 import avatar from "../../assets/avatar.png";
+import profile from "../../assets/profile.png"
 
 import SocialIcons from "../Social Icons/SocialIcons";
 import GlowingTexts from "../Designed Texts/GlowingTexts/GlowingTexts";
@@ -39,7 +40,7 @@ const AboutMe = () => {
         <SocialIcons />
       </div>
       <div className={style.right}>
-        <img src={avatar} className={style.rightImage} />
+        <img src={profile} className={style.rightImage} />
       </div>
     </div>
   );
